@@ -4,6 +4,8 @@ public class QuantityMeasurement {
 
     private static int feetToInchConversionFactor = 12;
     private static double yardToFeetConversionFactor = 3;
+    private static double yardToInchConversionFactor = 36;
+    private static double inchToYardConversionFactor = 1/36;
 
     public static boolean convertFeetToInch(double feet, double inches) {
         if (inches == feetToInchConversionFactor * feet) {
@@ -15,6 +17,22 @@ public class QuantityMeasurement {
 
     public static boolean convertYardToFeet(double yard, double feet) {
         if (feet == yardToFeetConversionFactor * yard) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean convertYardToInch(double yard, double inches) {
+        if (inches == yardToInchConversionFactor * yard) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean convertInchToYard(double inches, double yard) {
+        if (yard == inchToYardConversionFactor * inches) {
             return true;
         } else {
             return false;
