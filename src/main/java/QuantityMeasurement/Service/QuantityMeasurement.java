@@ -38,4 +38,12 @@ public class QuantityMeasurement {
         }
     }
 
+    public static boolean convertFeetToYard(double feet, double yard) {
+        if (yard == feet/yardToFeetConversionFactor) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
