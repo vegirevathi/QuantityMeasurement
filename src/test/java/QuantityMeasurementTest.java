@@ -37,4 +37,9 @@ public class QuantityMeasurementTest {
     public void givenInchesAndYard_ShouldReturnComparisonResult_ForCorrectValues() {
         Assert.assertEquals(true, QuantityMeasurement.convertInchToYard(36.0, 1.0));
     }
+
+    @Test
+    public void givenFeetAndYard_ShouldReturnComparisonResult() {
+        Assert.assertEquals(true, QuantityMeasurement.convertFeetToYard(3.0, 1.0));
+    }
 }
