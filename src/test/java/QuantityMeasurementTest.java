@@ -22,4 +22,9 @@ public class QuantityMeasurementTest {
     public void givenYardAndFeet_ShouldReturnComparisonResult_ForWrongValues() {
         Assert.assertEquals(false, QuantityMeasurement.convertYardToFeet(1.0, 1.0));
     }
+
+    @Test
+    public void givenYardAndInches_ShouldReturnComparisonResult_ForWrongValues() {
+        Assert.assertEquals(false, QuantityMeasurement.convertYardToInch(1.0, 1.0));
+    }
 }
