@@ -5,9 +5,6 @@ import org.junit.Test;
 public class QuantityMeasurementTest {
     @Test
     public void givenValuesInFeet_ShouldReturnCorrectValueInInches() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        double feet = 2.0;
-        double inches = quantityMeasurement.convertFeetToInch(feet);
-        Assert.assertEquals(24, inches, 0.0);
+        Assert.assertEquals(true, QuantityMeasurement.convertFeetToInch(1.0, 12.0));
     }
 }
