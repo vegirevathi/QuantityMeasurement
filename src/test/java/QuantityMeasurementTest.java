@@ -17,4 +17,9 @@ public class QuantityMeasurementTest {
     public void givenYardAndFeet_ShouldReturnComparisonResult() {
         Assert.assertEquals(true, QuantityMeasurement.convertYardToFeet(1.0, 3.0));
     }
+
+    @Test
+    public void givenYardAndFeet_ShouldReturnComparisonResult_ForWrongValues() {
+        Assert.assertEquals(false, QuantityMeasurement.convertYardToFeet(1.0, 1.0));
+    }
 }
