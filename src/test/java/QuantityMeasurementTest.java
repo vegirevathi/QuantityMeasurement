@@ -116,6 +116,13 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void given0CentimetersAnd1Centimeters_ShouldReturnNotEqual() {
+        Centimeter centimeter1 = new Centimeter(0.0);
+        Centimeter centimeter2 = new Centimeter(1.0);
+        Assert.assertNotEquals(centimeter1, centimeter2);
+    }
+
+    @Test
     public void givenFeetAndInches_WhenLengthsAreEqual_ShouldReturnTrue() {
         Inch Inch = new Inch(12.0);
         Feet feet = new Feet(1.0);
