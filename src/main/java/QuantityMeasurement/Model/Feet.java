@@ -1,10 +1,15 @@
 package QuantityMeasurement.Model;
 
 public class Feet {
-    private final double value;
+    public String variable;
+    public double value;
 
     public Feet(double value) {
         this.value = value;
+    }
+
+    public Feet(String variable) {
+        this.variable = variable;
     }
 
     @Override
