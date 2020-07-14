@@ -20,6 +20,14 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void given0FeetAndNull_ShouldReturnNotEqual() {
+        Feet feet1 = new Feet(0.0);
+        Feet feet2 = null;
+        boolean result = feet1.equals(feet2);
+        Assert.assertFalse(result);
+    }
+
+    @Test
     public void givenFeetAndInches_ShouldReturnComparisonResult() {
         Assert.assertEquals(true, QuantityMeasurement.convertFeetToInch(1.0, 12.0));
     }
