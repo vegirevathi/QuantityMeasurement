@@ -28,9 +28,16 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenIntAndString_ShouldReturnNotEqual() {
+    public void givenFeet1AndFeet2_FromDifferentTypes_ShouldReturnNotEqual() {
+        Feet feet1 = new Feet(1.0);
+        Feet feet2 = new Feet("Zero");
+        Assert.assertNotEquals(feet1, feet2);
+    }
+
+    @Test
+    public void givenFeet1AndFeet2_FromDifferentReferences_ShouldReturnNotEqual() {
         Feet feet1 = new Feet(0.0);
-        String feet2 = "Zero";
+        double feet2 = 0.0;      
         Assert.assertNotEquals(feet1, feet2);
     }
 
