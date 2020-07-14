@@ -94,6 +94,13 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void given0YardAndNull_ShouldReturnNotEqual() {
+        Yard yard1 = new Yard(0.0);
+        Yard yard2 = null;
+        Assert.assertNotEquals(yard1, yard2);
+    }
+
+    @Test
     public void givenFeetAndInches_WhenLengthsAreEqual_ShouldReturnTrue() {
         Inch Inch = new Inch(12.0);
         Feet feet = new Feet(1.0);
