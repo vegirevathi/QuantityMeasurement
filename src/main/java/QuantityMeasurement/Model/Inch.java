@@ -1,10 +1,15 @@
 package QuantityMeasurement.Model;
 
 public class Inch {
-    private final double value;
+    public String variable;
+    public double value;
 
     public Inch(double value) {
         this.value = value;
+    }
+
+    public Inch(String variable) {
+        this.variable = variable;
     }
 
     @Override
