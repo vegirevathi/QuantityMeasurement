@@ -50,6 +50,13 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void given0InchAnd1Inch_ShouldReturnEqual() {
+        Inch Inch1 = new Inch(0.0);
+        Inch Inch2 = new Inch(1.0);
+        Assert.assertNotEquals(Inch1, Inch2);
+    }
+
+    @Test
     public void givenFeetAndInches_ShouldReturnComparisonResult() {
         Assert.assertEquals(true, QuantityMeasurement.convertFeetToInch(1.0, 12.0));
     }
