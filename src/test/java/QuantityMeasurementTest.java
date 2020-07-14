@@ -1,4 +1,5 @@
 import QuantityMeasurement.Model.Feet;
+import QuantityMeasurement.Model.Inch;
 import QuantityMeasurement.Service.QuantityMeasurement;
 import org.junit.Assert;
 import org.junit.Test;
@@ -39,6 +40,13 @@ public class QuantityMeasurementTest {
         Feet feet1 = new Feet(0.0);
         double feet2 = 0.0;      
         Assert.assertNotEquals(feet1, feet2);
+    }
+
+    @Test
+    public void given0InchAnd0Inch_ShouldReturnEqual() {
+        Inch Inch1 = new Inch(0.0);
+        Inch Inch2 = new Inch(0.0);
+        Assert.assertEquals(Inch1, Inch2);
     }
 
     @Test
