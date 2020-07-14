@@ -1,3 +1,4 @@
+import QuantityMeasurement.Model.Centimeter;
 import QuantityMeasurement.Model.Feet;
 import QuantityMeasurement.Model.Inch;
 import QuantityMeasurement.Model.Yard;
@@ -98,6 +99,20 @@ public class QuantityMeasurementTest {
         Yard yard1 = new Yard(0.0);
         Yard yard2 = null;
         Assert.assertNotEquals(yard1, yard2);
+    }
+
+    @Test
+    public void given0YardAnd0Yard_ClassChange_ShouldReturnNotEqual() {
+        Yard yard1 = new Yard(0.0);
+        double yard2 = 1.0;
+        Assert.assertNotEquals(yard1, yard2);
+    }
+
+    @Test
+    public void given0CentimetersAnd0Centimeters_ShouldReturnEqual() {
+        Centimeter centimeter1 = new Centimeter(0.0);
+        Centimeter centimeter2 = new Centimeter(0.0);
+        Assert.assertEquals(centimeter1, centimeter2);
     }
 
     @Test
