@@ -28,6 +28,13 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void givenIntAndString_ShouldReturnNotEqual() {
+        Feet feet1 = new Feet(0.0);
+        String feet2 = "Zero";
+        Assert.assertNotEquals(feet1, feet2);
+    }
+
+    @Test
     public void givenFeetAndInches_ShouldReturnComparisonResult() {
         Assert.assertEquals(true, QuantityMeasurement.convertFeetToInch(1.0, 12.0));
     }
