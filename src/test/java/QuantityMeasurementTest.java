@@ -1,8 +1,17 @@
+import QuantityMeasurement.Model.Feet;
 import QuantityMeasurement.Service.QuantityMeasurement;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class QuantityMeasurementTest {
+
+    @Test
+    public void given0FeetAnd0Feet_ShouldReturnEqual() {
+        Feet feet1 = new Feet(0.0);
+        Feet feet2 = new Feet(0.0);
+        Assert.assertEquals(feet1, feet2);
+    }
+
     @Test
     public void givenFeetAndInches_ShouldReturnComparisonResult() {
         Assert.assertEquals(true, QuantityMeasurement.convertFeetToInch(1.0, 12.0));
@@ -11,6 +20,11 @@ public class QuantityMeasurementTest {
     @Test
     public void givenFeetAndInches_ShouldReturnComparisonResult_ForNull() {
         Assert.assertEquals(true, QuantityMeasurement.convertFeetToInch(0.0, 0.0));
+    }
+
+    @Test
+    public void givenFeetAndInches_ShouldReturnComparisonResult_ForWrongValues() {
+        Assert.assertEquals(false, QuantityMeasurement.convertFeetToInch(0.1, 1.0));
     }
 
     @Test
@@ -39,7 +53,17 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void givenInchesAndYard_ShouldReturnComparisonResult_ForWrongValues() {
+        Assert.assertEquals(false, QuantityMeasurement.convertInchToYard(36.0, 1.1));
+    }
+
+    @Test
     public void givenFeetAndYard_ShouldReturnComparisonResult() {
         Assert.assertEquals(true, QuantityMeasurement.convertFeetToYard(3.0, 1.0));
+    }
+
+    @Test
+    public void givenFeetAndYard_ShouldReturnComparisonResult_ForWrongValues() {
+        Assert.assertEquals(false, QuantityMeasurement.convertFeetToYard(3.0, 3.0));
     }
 }
