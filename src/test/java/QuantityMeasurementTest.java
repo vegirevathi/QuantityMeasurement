@@ -212,4 +212,11 @@ public class QuantityMeasurementTest {
         Yard yard = new Yard(21.0);
         Assert.assertNotEquals(new QuantityMeasurement().getConversionValue(feet.value, QuantityConversion.FEET_TO_YARD), yard.value, 0.1);
     }
+
+    @Test
+    public void givenInchAndCentimeter_WhenLengthsAreEqual_ShouldReturnTrue() {
+        Inch inch = new Inch(1.0);
+        Centimeter centimeter = new Centimeter(2.5);
+        Assert.assertEquals(new QuantityMeasurement().getConversionValue(inch.value, QuantityConversion.INCH_TO_CENTIMETER), centimeter.value, 0.1);
+    }
 }
