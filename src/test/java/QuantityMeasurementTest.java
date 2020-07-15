@@ -1,4 +1,5 @@
 import QuantityMeasurement.Model.Length;
+import QuantityMeasurement.Model.Volume;
 import QuantityMeasurement.Service.QuantityMeasurement;
 import QuantityMeasurement.Utility.QuantityConversion;
 import org.junit.Assert;
@@ -251,5 +252,12 @@ public class QuantityMeasurementTest {
         double inch2 = new QuantityMeasurement().getConversionValue(centimeter2.value, QuantityConversion.CENTIMETER_TO_INCH);
         Length inch3 = new Length(Length.Unit.INCH, 3.0);
         Assert.assertEquals(new QuantityMeasurement().addingTwoValues(inch1.value, inch2), inch3.value, 0.1);
+    }
+
+    @Test
+    public void given0GallonAnd0Gallon_ShouldReturnEqual() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 0.0);
+        Volume gallon2 = new Volume(Volume.Unit.GALLON, 0.0);
+        Assert.assertEquals(gallon1, gallon2);
     }
 }
