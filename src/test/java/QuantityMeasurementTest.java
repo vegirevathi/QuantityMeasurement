@@ -295,4 +295,22 @@ public class QuantityMeasurementTest {
         Volume millilitre1 = new Volume(Volume.Unit.MILLILITRE, 1000);
         Assert.assertEquals(new QuantityMeasurement().getConversionValue(litre1.value, QuantityConversion.LITRE_TO_MILLILITRE), millilitre1.value, 0.1);
     }
+
+    @Test
+    public void given1gallonAnd3dot78Litres_WhenEqualTo7dot57Litres_ShouldReturnTrue() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 1.0);
+        double litre1 = new QuantityMeasurement().getConversionValue(gallon1.value, QuantityConversion.GALLON_TO_LITRE);
+        Volume litre2 = new Volume(Volume.Unit.LITRE, 3.78);
+        Volume litre3 = new Volume(Volume.Unit.LITRE, 7.57);
+        Assert.assertEquals(new QuantityMeasurement().addingTwoValues(litre1, litre2.value), litre3.value, 0.1);
+    }
+
+    @Test
+    public void given1LitreAnd1000Millilitres_WhenEqualTo2Litres_ShouldReturnEqual() {
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 1.0);
+        Volume millilitre1 = new Volume(Volume.Unit.MILLILITRE, 1000);
+        double litre2 = new QuantityMeasurement().getConversionValue(millilitre1.value, QuantityConversion.MILLILITRE_TO_LITRE);
+        Volume litre3 = new Volume(Volume.Unit.LITRE, 2.0);
+        Assert.assertEquals(new QuantityMeasurement().addingTwoValues(litre1.value, litre2), litre3.value, 0.1);
+    }
 }
