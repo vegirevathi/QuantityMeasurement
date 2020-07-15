@@ -342,4 +342,11 @@ public class QuantityMeasurementTest {
         double gram2 = 0.0;
         Assert.assertNotEquals(gram1, gram2);
     }
+
+    @Test
+    public void given1kilogramAnd1000Gram_ShouldReturnEqual() {
+        Weight kilogram1 = new Weight(Weight.Unit.KILOGRAM, 1.0);
+        Weight gram1 = new Weight(Weight.Unit.GRAM, 1000.0);
+        Assert.assertEquals(new QuantityMeasurement().getConversionValue(kilogram1.value, QuantityConversion.KILOGRAM_TO_GRAM), gram1.value, 0.1);
+    }
 }
