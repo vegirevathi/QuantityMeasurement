@@ -6,7 +6,7 @@ public class Volume {
     public final Unit unit;
     public final double value;
 
-    public enum Unit{ GALLON, LITRE}
+    public enum Unit{ GALLON, LITRE, MILLILITRE}
 
     public Volume(Unit unit, double value) {
         this.unit = unit;
