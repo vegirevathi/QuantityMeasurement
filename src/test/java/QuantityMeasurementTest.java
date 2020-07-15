@@ -381,4 +381,11 @@ public class QuantityMeasurementTest {
         Temperature celsius2 = new Temperature(Temperature.Unit.CELSIUS, 1.0);
         Assert.assertNotEquals(celsius1, celsius2);
     }
+
+    @Test
+    public void given0CelsiusAndNull_ShouldReturnNotEqual() {
+        Temperature celsius1 = new Temperature(Temperature.Unit.CELSIUS, 0.0);
+        Temperature celsius2 = null;
+        Assert.assertNotEquals(celsius1, celsius2);
+    }
 }
