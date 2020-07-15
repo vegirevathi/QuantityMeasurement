@@ -349,4 +349,11 @@ public class QuantityMeasurementTest {
         Weight gram1 = new Weight(Weight.Unit.GRAM, 1000.0);
         Assert.assertEquals(new QuantityMeasurement().getConversionValue(kilogram1.value, QuantityConversion.KILOGRAM_TO_GRAM), gram1.value, 0.1);
     }
+
+    @Test
+    public void given1TonneAnd1000Kgs_ShouldReturnEqual() {
+        Weight tonne1 = new Weight(Weight.Unit.TONNE, 1.0);
+        Weight kilogram1 = new Weight(Weight.Unit.KILOGRAM, 1000.0);
+        Assert.assertEquals(new QuantityMeasurement().getConversionValue(tonne1.value, QuantityConversion.TONNE_TO_KILOGRAM), kilogram1.value, 0.1);
+    }
 }
