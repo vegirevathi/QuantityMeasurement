@@ -1,5 +1,6 @@
 import QuantityMeasurement.Model.Length;
 import QuantityMeasurement.Model.Volume;
+import QuantityMeasurement.Model.Weight;
 import QuantityMeasurement.Service.QuantityMeasurement;
 import QuantityMeasurement.Utility.QuantityConversion;
 import org.junit.Assert;
@@ -312,5 +313,12 @@ public class QuantityMeasurementTest {
         double litre2 = new QuantityMeasurement().getConversionValue(millilitre1.value, QuantityConversion.MILLILITRE_TO_LITRE);
         Volume litre3 = new Volume(Volume.Unit.LITRE, 2.0);
         Assert.assertEquals(new QuantityMeasurement().addingTwoValues(litre1.value, litre2), litre3.value, 0.1);
+    }
+
+    @Test
+    public void given0GramAnd0Gram_ShouldReturnEqual() {
+        Weight gram1 = new Weight(Weight.Unit.GRAM, 0.0);
+        Weight gram2 = new Weight(Weight.Unit.GRAM, 0.0);
+        Assert.assertEquals(gram1, gram2);
     }
 }
