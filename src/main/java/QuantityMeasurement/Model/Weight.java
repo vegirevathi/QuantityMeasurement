@@ -6,7 +6,7 @@ public class Weight {
     public enum Unit{ GRAM, KILOGRAM, TONNE};
 
     private final Unit unit;
-    private final double value;
+    public final double value;
 
     public Weight(Unit unit, double value) {
         this.unit = unit;
