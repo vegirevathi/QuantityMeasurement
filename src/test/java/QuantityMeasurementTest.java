@@ -1,4 +1,5 @@
 import QuantityMeasurement.Model.Length;
+import QuantityMeasurement.Model.Temperature;
 import QuantityMeasurement.Model.Volume;
 import QuantityMeasurement.Model.Weight;
 import QuantityMeasurement.Service.QuantityMeasurement;
@@ -365,5 +366,12 @@ public class QuantityMeasurementTest {
         double kilogram2 = new QuantityMeasurement().getConversionValue(gram1.value, QuantityConversion.GRAM_TO_KILOGRAM);
         Weight kilogram3 = new Weight(Weight.Unit.KILOGRAM, 1001.0);
         Assert.assertEquals(new QuantityMeasurement().addingTwoValues(kilogram1, kilogram2), kilogram3.value, 0.1);
+    }
+
+    @Test
+    public void given0CelsiusAnd0Celsius_ShouldReturnEqual() {
+        Temperature celsius1 = new Temperature(Temperature.Unit.CELSIUS, 0.0);
+        Temperature celsius2 = new Temperature(Temperature.Unit.CELSIUS, 0.0);
+        Assert.assertEquals(celsius1, celsius2);
     }
 }
