@@ -288,4 +288,11 @@ public class QuantityMeasurementTest {
         Volume litre1 = new Volume(Volume.Unit.LITRE, 3.78);
         Assert.assertEquals(new QuantityMeasurement().getConversionValue(gallon1.value, QuantityConversion.GALLON_TO_LITRE), litre1.value, 0.1);
     }
+
+    @Test
+    public void given1LitreAnd1000Millilitres_ShouldReturnEqual() {
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 1.0);
+        Volume millilitre1 = new Volume(Volume.Unit.MILLILITRE, 1000);
+        Assert.assertEquals(new QuantityMeasurement().getConversionValue(litre1.value, QuantityConversion.LITRE_TO_MILLILITRE), millilitre1.value, 0.1);
+    }
 }
