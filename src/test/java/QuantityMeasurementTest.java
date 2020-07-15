@@ -281,4 +281,11 @@ public class QuantityMeasurementTest {
         double gallon2 = 0.0;
         Assert.assertNotEquals(gallon1, gallon2);
     }
+
+    @Test
+    public void given1GallonAnd3dot78Litres_ShouldReturnEqual() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume litre1 = new Volume(Volume.Unit.LITRE, 3.78);
+        Assert.assertEquals(new QuantityMeasurement().getConversionValue(gallon1.value, QuantityConversion.GALLON_TO_LITRE), litre1.value, 0.1);
+    }
 }
