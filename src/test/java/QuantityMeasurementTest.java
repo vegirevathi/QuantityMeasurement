@@ -388,4 +388,11 @@ public class QuantityMeasurementTest {
         Temperature celsius2 = null;
         Assert.assertNotEquals(celsius1, celsius2);
     }
+
+    @Test
+    public void given0CelsiusAnd0Celsius_WhenReferenceDifferent_ShouldReturnNotEqual() {
+        Temperature celsius1 = new Temperature(Temperature.Unit.CELSIUS, 0.0);
+        double celsius2 = 0.0;
+        Assert.assertNotEquals(celsius1, celsius2);
+    }
 }
