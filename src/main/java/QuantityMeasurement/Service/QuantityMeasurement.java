@@ -15,4 +15,7 @@ public class QuantityMeasurement {
         return unit*quantityConversion.CONVERSION_FACTOR;
     }
 
+    public double addingTwoValues(double unit1, double unit2) {
+        return unit1+unit2;
+    }
 }

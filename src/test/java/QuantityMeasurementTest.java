@@ -216,4 +216,40 @@ public class QuantityMeasurementTest {
         Length centimeter = new Length(Length.Unit.CENTIMETER, 2.5);
         Assert.assertEquals(new QuantityMeasurement().getConversionValue(inch.value, QuantityConversion.INCH_TO_CENTIMETER), centimeter.value, 0.1);
     }
+
+    @Test
+    public void given2InchAnd2Inch_WhenEqualTo4Inch_ShouldReturnTrue() {
+        Length Inch1 = new Length(Length.Unit.INCH, 2.0);
+        Length Inch2 = new Length(Length.Unit.INCH, 2.0);
+        Length Inch3 = new Length(Length.Unit.INCH, 4.0);
+        Assert.assertEquals(new QuantityMeasurement().addingTwoValues(Inch1.value, Inch2.value), Inch3.value, 0.1);
+    }
+
+    @Test
+    public void given1FeetAnd2Inch_WhenEqualTo14Inch_ShouldReturnTrue() {
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        double inch1 = new QuantityMeasurement().getConversionValue(feet.value, QuantityConversion.FEET_TO_INCH);
+        Length inch2 = new Length(Length.Unit.INCH, 2.0);
+        Length inch3 = new Length(Length.Unit.INCH, 14.0);
+        Assert.assertEquals(new QuantityMeasurement().addingTwoValues(inch1, inch2.value), inch3.value, 0.1);
+    }
+
+    @Test
+    public void given1FeetAnd1Feet_WhenEqualTo24Inch_ShouldReturnTrue() {
+        Length feet1 = new Length(Length.Unit.FEET, 1.0);
+        double inch1 = new QuantityMeasurement().getConversionValue(feet1.value, QuantityConversion.FEET_TO_INCH);
+        Length feet2 = new Length(Length.Unit.FEET, 1.0);
+        double inch2 = new QuantityMeasurement().getConversionValue(feet2.value, QuantityConversion.FEET_TO_INCH);
+        Length inch3 = new Length(Length.Unit.INCH, 24.0);
+        Assert.assertEquals(new QuantityMeasurement().addingTwoValues(inch1, inch2), inch3.value, 0.1);
+    }
+
+    @Test
+    public void given2InchAnd2AndHalfCentimeter_WhenEqualTo3Inch_ShouldReturnTrue() {
+        Length inch1 = new Length(Length.Unit.INCH, 2.0);
+        Length centimeter2 = new Length(Length.Unit.CENTIMETER, 2.5);
+        double inch2 = new QuantityMeasurement().getConversionValue(centimeter2.value, QuantityConversion.CENTIMETER_TO_INCH);
+        Length inch3 = new Length(Length.Unit.INCH, 3.0);
+        Assert.assertEquals(new QuantityMeasurement().addingTwoValues(inch1.value, inch2), inch3.value, 0.1);
+    }
 }
