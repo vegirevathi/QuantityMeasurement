@@ -335,4 +335,11 @@ public class QuantityMeasurementTest {
         Weight gram2 = null;
         Assert.assertNotEquals(gram1, gram2);
     }
+
+    @Test
+    public void given0GramAnd0Gram_WhenDifferentReference_ShouldReturnNotEqual() {
+        Weight gram1 = new Weight(Weight.Unit.GRAM, 0.0);
+        double gram2 = 0.0;
+        Assert.assertNotEquals(gram1, gram2);
+    }
 }
