@@ -395,4 +395,11 @@ public class QuantityMeasurementTest {
         double celsius2 = 0.0;
         Assert.assertNotEquals(celsius1, celsius2);
     }
+
+    @Test
+    public void given100CelsiusAnd212Fahrenheit_ShouldReturnEqual() {
+        Temperature celsius1 = new Temperature(Temperature.Unit.CELSIUS, 100.0);
+        Temperature fahrenheit1 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        Assert.assertEquals(new QuantityMeasurement().temperatureConversion(celsius1.value, 32, QuantityConversion.CELSIUS_TO_FAHRENHEIT), fahrenheit1.value, 0.1);
+    }
 }
