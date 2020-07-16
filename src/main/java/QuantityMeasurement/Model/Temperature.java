@@ -6,7 +6,7 @@ public class Temperature {
     public enum Unit{ CELSIUS, FAHRENHEIT };
 
     private final Unit unit;
-    private final double value;
+    public final double value;
 
     public Temperature(Unit unit, double value) {
         this.unit = unit;

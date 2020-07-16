@@ -13,7 +13,8 @@ public enum QuantityConversion {
     MILLILITRE_TO_LITRE(0.001),
     KILOGRAM_TO_GRAM(1000),
     GRAM_TO_KILOGRAM(0.001),
-    TONNE_TO_KILOGRAM(1000);
+    TONNE_TO_KILOGRAM(1000),
+    CELSIUS_TO_FAHRENHEIT(1.8);
 
     public final double CONVERSION_FACTOR;
 
