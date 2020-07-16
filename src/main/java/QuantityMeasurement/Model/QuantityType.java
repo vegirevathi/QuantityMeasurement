@@ -1,5 +1,7 @@
 package QuantityMeasurement.Model;
 
+import QuantityMeasurement.Exception.QuantityException;
+
 import java.util.Objects;
 
 public class QuantityType {
@@ -8,7 +10,8 @@ public class QuantityType {
     private final Unit unit;
     public final double value;
 
-    public QuantityType(Unit unit, double value) {
+    public QuantityType(Unit unit, double value) throws QuantityException {
+        if (value<0) throw new QuantityException("Quantity should not be negative value", QuantityException.ExceptionType.NEGATIVE_UNIT_VALUE);
         this.unit = unit;
         this.value = value;
     }
